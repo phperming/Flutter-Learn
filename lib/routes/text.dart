@@ -23,62 +23,67 @@ class _TextRouteState extends State<TextRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          Text("Hello world", textAlign: TextAlign.center),
-          Text(
-            "Hello world! i'm jack." * 4,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          Text(
-            "Hello word",
-            textScaleFactor: 1.5,
-          ),
-          Text(
-            "hello world" * 6,
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            "hello world",
-            style: TextStyle(
-              color: Colors.blue,
-              fontSize: 18.0,
-              height: 1.2,
-              fontFamily: "Courier",
-              decorationStyle: TextDecorationStyle.dashed,
-              background: new Paint()..color = Colors.yellow,
-              decoration: TextDecoration.underline,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("文本格式及样式"),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Text("Hello world", textAlign: TextAlign.center),
+            Text(
+              "Hello world! i'm jack." * 4,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
-          ),
-          Text.rich(
-            TextSpan(children: [
-              TextSpan(
-                text: "Home: ",
+            Text(
+              "Hello word",
+              textScaleFactor: 1.5,
+            ),
+            Text(
+              "hello world" * 6,
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              "hello world",
+              style: TextStyle(
+                color: Colors.blue,
+                fontSize: 18.0,
+                height: 1.2,
+                fontFamily: "Courier",
+                decorationStyle: TextDecorationStyle.dashed,
+                background: new Paint()..color = Colors.yellow,
+                decoration: TextDecoration.underline,
               ),
-              TextSpan(
-                  text: "https://flitterchaina.club",
-                  style: TextStyle(color: Colors.blue),
-                  recognizer: _tapReconginzer)
-            ]),
-          ),
-          DefaultTextStyle(
-            style: TextStyle(color: Colors.blue, fontSize: 20.0),
-            textAlign: TextAlign.start,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text("hello World"),
-                Text("I m jack"),
-                Text(
-                  "I m jack",
-                  style: TextStyle(inherit: false, color: Colors.grey),
-                )
-              ],
             ),
-          )
-        ],
+            Text.rich(
+              TextSpan(children: [
+                TextSpan(
+                  text: "Home: ",
+                ),
+                TextSpan(
+                    text: "https://flitterchaina.club",
+                    style: TextStyle(color: Colors.blue),
+                    recognizer: _tapReconginzer)
+              ]),
+            ),
+            DefaultTextStyle(
+              style: TextStyle(color: Colors.blue, fontSize: 20.0),
+              textAlign: TextAlign.start,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text("hello World"),
+                  Text("I m jack"),
+                  Text(
+                    "I m jack",
+                    style: TextStyle(inherit: false, color: Colors.grey),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
